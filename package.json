@@ -1,0 +1,53 @@
+{
+  "name": "brokerage-recruiting-course-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Next.js template for a real estate brokerage recruiting site with a gamified pre-licensing course, admin CRM, and Stripe memberships.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev --port 3004",
+    "build": "next build",
+    "start": "next start --port 3004",
+    "lint": "eslint",
+    "test": "vitest run"
+  },
+  "overrides": {
+    "esbuild": "0.25.12"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "@tiptap/extension-image": "^3.27.1",
+    "@tiptap/extension-link": "^3.27.1",
+    "@tiptap/pm": "^3.27.1",
+    "@tiptap/react": "^3.27.1",
+    "@tiptap/starter-kit": "^3.27.1",
+    "better-auth": "^1.5.5",
+    "drizzle-orm": "^0.45.1",
+    "next": "^16.2.1",
+    "node-edge-tts": "^1.2.10",
+    "pg": "^8.23.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "sanitize-html": "^2.17.5",
+    "stripe": "^23.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/sanitize-html": "^2.16.1",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.1",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.9"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.1.3"
+  }
+}

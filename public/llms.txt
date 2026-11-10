@@ -1,0 +1,26 @@
+# Acme Realty (demo)
+
+> Demo brokerage recruiting site and free real estate pre-licensing course. Agent recruitment and fit quiz, team directory, partner services, investor education, and a 60-hour interactive Virginia pre-licensing course. All names and contact details are placeholders.
+
+## Main features
+
+- **Two career paths**: join a specialized team or grow independently through the Growth Network program
+- **Team directory** with team detail pages and lead routing
+- **Agent Advantage**: transactions and operations, financial and legal partners, asset management, and education
+- **Free Virginia real estate pre-licensing course**: interactive lessons, practice questions, mock exams, completion certificate
+- **Fit quiz**: short assessment to match agents to the right team or path
+
+## Official URLs
+
+- Homepage: https://example.com
+- Join a Team: https://example.com/join-a-team
+- Growth Network: https://example.com/network
+- Teams: https://example.com/teams
+- Free Course: https://example.com/course
+- Fit Quiz: https://example.com/quiz
+- Apply: https://example.com/apply
+
+## Contact
+
+- agent@example.com | (555) 010-0100
+- Office: 123 Main Street, Anytown, VA 00000

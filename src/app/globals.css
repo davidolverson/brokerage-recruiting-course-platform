@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Grey Scale */
+  --color-grey-50:  #F9FAFB;
+  --color-grey-100: #F3F4F6;
+  --color-grey-200: #E5E7EB;
+  --color-grey-300: #D1D5DB;
+  --color-grey-400: #9CA3AF;
+  --color-grey-500: #6B7280;
+  --color-grey-600: #4B5563;
+  --color-grey-700: #374151;
+  --color-grey-800: #1F2937;
+  --color-grey-900: #000000;
+  --color-black:    #000000;
+  --color-white:    #FFFFFF;
+
+  /* Backgrounds */
+  --color-bg-primary:   #FFFFFF;
+  --color-bg-secondary: #F9FAFB;
+  --color-bg-elevated:  #FAFAFA;
+  --color-bg-inverse:   #000000;
+
+  /* Text */
+  --color-text-primary:   #000000;
+  --color-text-secondary: #4B5563;
+  --color-text-muted:     #9CA3AF;
+  --color-text-inverse:   #FFFFFF;
+  --color-text-disabled:  #D1D5DB;
+
+  /* Borders */
+  --color-border-default: #E5E7EB;
+  --color-border-strong:  #D1D5DB;
+  --color-border-focus:   #000000;
+
+  /* Surfaces */
+  --color-surface-card:   #FFFFFF;
+  --color-surface-hover:  #F9FAFB;
+  --color-surface-active: #F3F4F6;
+
+  /* Actions */
+  --color-action-primary-bg:       #000000;
+  --color-action-primary-text:     #FFFFFF;
+  --color-action-primary-hover:    #000000;
+  --color-action-secondary-bg:     #FFFFFF;
+  --color-action-secondary-text:   #000000;
+  --color-action-secondary-border: #000000;
+  --color-action-secondary-hover:  #F9FAFB;
+
+  /* States */
+  --color-focus-ring:      #000000;
+  --color-success:         #16A34A;
+  --color-success-surface: #F0FDF4;
+  --color-error:           #DC2626;
+  --color-error-surface:   #FEF2F2;
+  --color-warning:         #D97706;
+  --color-warning-surface: #FFFBEB;
+
+  /* Typography */
+  --font-heading: var(--font-manrope), sans-serif;
+  --font-body: var(--font-roboto), sans-serif;
+
+  /* Layout */
+  --container-max: 1280px;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* Global focus-visible — black ring on all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+}
+
+/* ─── Hero entrance (CSS-only, fires on page load) ──────────────── */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter {
+  animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-enter-1 { animation-delay: 0.1s; }
+.hero-enter-2 { animation-delay: 0.25s; }
+.hero-enter-3 { animation-delay: 0.4s; }
+.hero-enter-4 { animation-delay: 0.6s; }
+
+/* ─── Proof strip number counter pop ────────────────────────────── */
+@keyframes number-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(8px);
+  }
+  60% {
+    transform: scale(1.04) translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ─── Dashboard fade-in ─────────────────────────────────────────── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.12s; }
+.fade-up-3 { animation-delay: 0.2s; }
+.fade-up-4 { animation-delay: 0.28s; }
+.fade-up-5 { animation-delay: 0.36s; }
+.fade-up-6 { animation-delay: 0.44s; }
+
+/* ─── Confetti particle ─────────────────────────────────────────── */
+@keyframes confetti-fall {
+  0%   { transform: translateY(-10px) rotate(0deg) scale(1); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg) scale(0.5); opacity: 0; }
+}
+
+@keyframes confetti-drift {
+  0%   { margin-left: 0; }
+  25%  { margin-left: 24px; }
+  75%  { margin-left: -24px; }
+  100% { margin-left: 0; }
+}
+
+.confetti-particle {
+  position: fixed;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: confetti-fall var(--fall-dur, 2.2s) ease-in var(--fall-delay, 0s) both,
+             confetti-drift var(--drift-dur, 1.8s) ease-in-out var(--fall-delay, 0s) infinite;
+}
+
+/* ─── Score count-up reveal ─────────────────────────────────────── */
+@keyframes score-reveal {
+  from { opacity: 0; transform: scale(0.6); }
+  60%  { transform: scale(1.08); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.score-reveal {
+  animation: score-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ─── Scroll-triggered fade-in (marketing page) ─────────────────── */
+@keyframes section-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section-fade {
+  opacity: 0;
+}
+
+.section-fade.is-visible {
+  animation: section-fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ─── Floating CTA slide-in ─────────────────────────────────────── */
+@keyframes float-cta-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.float-cta-enter {
+  animation: float-cta-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ─── Gauge stroke animation ─────────────────────────────────────── */
+@keyframes gauge-draw {
+  from { stroke-dashoffset: var(--gauge-total, 283); }
+  to   { stroke-dashoffset: var(--gauge-offset, 0); }
+}
+
+.gauge-arc {
+  animation: gauge-draw 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+/* ─── Respect reduced motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter,
+  .hero-enter-1,
+  .hero-enter-2,
+  .hero-enter-3,
+  .hero-enter-4,
+  .fade-up,
+  .fade-up-1,
+  .fade-up-2,
+  .fade-up-3,
+  .fade-up-4,
+  .fade-up-5,
+  .fade-up-6,
+  .confetti-particle,
+  .score-reveal,
+  .section-fade,
+  .section-fade.is-visible,
+  .float-cta-enter,
+  .gauge-arc {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
